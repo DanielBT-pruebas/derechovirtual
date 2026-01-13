@@ -276,4 +276,786 @@
       font-size: 13px;
       font-weight: 600;
       color: var(--color-secondary);
-      margin-
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-media-tag {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 11px;
+      color: var(--color-muted);
+    }
+
+    .hero-media-pill {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(200, 154, 59, 0.1);
+      color: var(--color-accent);
+    }
+
+    .hero-media-placeholder {
+      border-radius: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.8);
+      background: #fefefe;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--color-muted);
+    }
+
+    .hero-media-placeholder strong {
+      color: var(--color-secondary);
+    }
+
+    /* generic section headings */
+    .section-header {
+      margin-bottom: 22px;
+    }
+
+    .section-eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-accent);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 26px;
+      color: var(--color-secondary);
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      color: var(--color-muted);
+      font-size: 15px;
+    }
+
+    /* layout helpers */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+    }
+
+    .card-header {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--color-secondary);
+      font-size: 16px;
+    }
+
+    .card-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 15px;
+      color: var(--color-muted);
+    }
+
+    .card-list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .card-list-bullet {
+      margin-top: 5px;
+      font-size: 16px;
+      color: var(--color-primary);
+    }
+
+    /* how-it-works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .step {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 18px 16px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.06);
+      border: 1px solid rgba(22, 163, 74, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--color-secondary);
+    }
+
+    .step-text {
+      font-size: 14px;
+      color: var(--color-muted);
+    }
+
+    /* stats + testimonials */
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .stat-pill {
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 8px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 13px;
+      color: var(--color-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stat-pill span {
+      font-weight: 600;
+      color: var(--color-primary-dark);
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 12px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      font-size: 14px;
+      color: var(--color-text);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .testimonial-name {
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--color-secondary);
+    }
+
+    .testimonial-meta {
+      font-size: 12px;
+      color: var(--color-muted);
+    }
+
+    /* FAQs */
+    .faq-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 14px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      margin-bottom: 10px;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: var(--color-secondary);
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: var(--color-muted);
+    }
+
+    /* closing CTA */
+    .closing-cta {
+      background: linear-gradient(135deg, #111827, #111827 40%, #1f2937);
+      border-radius: 20px;
+      padding: 24px 22px 22px;
+      color: #e5e7eb;
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing-cta::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 10% 0%, rgba(22, 163, 74, 0.3), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .closing-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .closing-badge {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(156, 163, 175, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .closing-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .closing-title {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .closing-text {
+      font-size: 14px;
+      color: #d1d5db;
+      margin-bottom: 14px;
+    }
+
+    .closing-meta {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 8px;
+    }
+
+    .closing-meta strong {
+      color: #e5e7eb;
+    }
+
+    /* footer */
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      background: #ffffff;
+      font-size: 12px;
+      color: var(--color-muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 20px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* responsive */
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-media-card {
+        max-width: 520px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner {
+        padding-inline: 16px;
+      }
+      .hero {
+        padding-block: 28px;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .testimonials {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .faq-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .section {
+        padding-inline: 16px;
+      }
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-right {
+        display: none; /* simplificar nav en móvil */
+      }
+      .section-title {
+        font-size: 22px;
+      }
+      .closing-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+
+  <!-- Meta Pixel (ID genérico de ejemplo) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod ?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '123456789012345'); // TODO: sustituir por el ID real del píxel
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img alt="facebook pixel" height="1" width="1"
+         style="display:none"
+         src="https://www.facebook.com/tr?id=123456789012345&ev=PageView&noscript=1" />
+  </noscript>
+</head>
+
+<body>
+  <div class="page">
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-brand">
+          <div class="nav-logo-placeholder">D</div>
+          <div>
+            Derecho Virtual
+            <div class="nav-sub">Derecho Test</div>
+          </div>
+        </div>
+        <div class="nav-right">
+          <span class="nav-link-muted">Grado en Derecho • Exámenes</span>
+          <button class="btn btn-outline btn-sm cta-button">
+            Pruébalo gratis
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- hero -->
+      <section class="section hero">
+        <div class="section-inner hero-grid">
+          <div>
+            <div class="hero-eyebrow">prepara tus exámenes con práctica real</div>
+            <h1 class="hero-title">
+              Haz tests como en el examen y
+              <span class="hero-highlight">aprueba Derecho con más seguridad</span>
+            </h1>
+            <p class="hero-subtitle">
+              Derecho Test es la app para estudiantes de Derecho que quieren saber qué cae,
+              practicar con tests por asignaturas y recibir feedback con IA antes del examen.
+            </p>
+
+            <div class="hero-badges">
+              <span class="badge">5 tests diarios gratis</span>
+              <span class="badge">Sin tarjeta de crédito</span>
+            </div>
+
+            <div class="hero-cta-row">
+              <button class="btn btn-primary cta-button">
+                Pruébalo gratis
+              </button>
+              <button class="btn btn-ghost cta-button">
+                Crear cuenta
+              </button>
+            </div>
+
+            <p class="hero-note">
+              <strong>Entra, practica 20–30 minutos,</strong> y ve al examen sabiendo dónde fallas y qué reforzar.
+            </p>
+
+            <div class="hero-meta">
+              <span>
+                <span class="hero-meta-dot"></span>
+                Más de 13.000 alumnos en Derecho Virtual
+              </span>
+              <span>Funciona para todas las universidades de España</span>
+            </div>
+          </div>
+
+          <!-- hero image: bloque claro para mockup / captura -->
+          <div class="hero-media-card">
+            <div class="hero-media-header">
+              <div class="hero-media-tag">vista de la plataforma</div>
+              <div class="hero-media-pill">Derecho Test</div>
+            </div>
+            <div class="hero-media-placeholder">
+              <div>
+                <strong>Espacio para imagen / mockup</strong>
+                <p style="margin-top:6px;">
+                  Inserta aquí una captura de pantalla de Derecho Test en ordenador o móvil
+                  mostrando un listado de tests y estadísticas de progreso.
+                </p>
+                <p style="margin-top:8px; font-size:12px;">
+                  Ejemplo: <code>img/derecho-test-mockup.png</code>
+                </p>
+              </div>
+            </div>
+            <!-- Cuando tengas la imagen, sustituye el bloque .hero-media-placeholder por algo así:
+            <img src="img/derecho-test-mockup.png" alt="Vista de la plataforma Derecho Test" />
+            -->
+          </div>
+        </div>
+      </section>
+
+      <!-- sección dolores / beneficios -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-eyebrow">por qué estudiar solo con apuntes ya no basta</div>
+            <h2 class="section-title">De “subrayar a ciegas” a practicar como en el examen</h2>
+            <p class="section-subtitle">
+              Derecho Test convierte tus temas en tests y casos, para que no pierdas tiempo
+              en lo que ya dominas y te centres en lo que realmente te quita puntos.
+            </p>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">Lo que pasa con el método de siempre</div>
+              <ul class="card-list">
+                <li>
+                  <span class="card-list-bullet">•</span>
+                  <span>Muchas horas subrayando, pero pocas preguntas tipo examen.</span>
+                </li>
+                <li>
+                  <span class="card-list-bullet">•</span>
+                  <span>No sabes bien qué cae ni si llevas buen ritmo.</span>
+                </li>
+                <li>
+                  <span class="card-list-bullet">•</span>
+                  <span>Llegas al examen sin haber practicado bajo presión de tiempo.</span>
+                </li>
+                <li>
+                  <span class="card-list-bullet">•</span>
+                  <span>Estudias todo por igual, aunque haya temas ya controlados.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header">Cómo te ayuda Derecho Test</div>
+              <ul class="card-list">
+                <li>
+                  <span class="card-list-bullet">✔</span>
+                  <span>Tests por asignaturas y temas para practicar justo lo que toca.</span>
+                </li>
+                <li>
+                  <span class="card-list-bullet">✔</span>
+                  <span>Corrección y feedback con IA para entender el porqué de cada respuesta.</span>
+                </li>
+                <li>
+                  <span class="card-list-bullet">✔</span>
+                  <span>Estadísticas que señalan tus puntos débiles antes del examen.</span>
+                </li>
+                <li>
+                  <span class="card-list-bullet">✔</span>
+                  <span>Menos horas “a lo loco” y más práctica que realmente sube la nota.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- cómo funciona -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-eyebrow">cómo funciona</div>
+            <h2 class="section-title">Entras, eliges asignatura y haces tus tests del día</h2>
+            <p class="section-subtitle">
+              Pensado para que puedas entrar un rato cada día, practicar y salir sabiendo exactamente
+              qué estás mejorando.
+            </p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-title">Elige asignatura y tema</div>
+              <div class="step-text">
+                Selecciona Civil, Penal, Constitucional, etc. y el tema que estás preparando esta semana.
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-title">Haz tests tipo examen</div>
+              <div class="step-text">
+                Responde preguntas y casos con tiempo limitado. La app corrige al instante y te muestra
+                la solución razonada.
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-title">Sigue tus estadísticas</div>
+              <div class="step-text">
+                Revisa tu porcentaje de aciertos por tema y deja que la IA te sugiera qué reforzar
+                antes del examen.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- stats / prueba social + hueco imagen mockup adicional -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-eyebrow">resultados y alumnos</div>
+            <h2 class="section-title">Respaldado por miles de estudiantes de Derecho</h2>
+            <p class="section-subtitle">
+              Derecho Virtual ya ha ayudado a miles de alumnos a aprobar. Derecho Test reúne toda esa experiencia
+              en una app de práctica diaria.
+            </p>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-pill"><span>13.000+</span> alumnos en Derecho Virtual</div>
+            <div class="stat-pill"><span>20–30 min</span> al día para notar mejora</div>
+            <div class="stat-pill"><span>5 tests</span> al día gratis, sin tarjeta</div>
+          </div>
+
+          <div class="grid-2" style="align-items: stretch; margin-top: 8px;">
+            <div>
+              <div class="testimonials">
+                <div class="testimonial">
+                  “Pasé de estudiar sin rumbo a saber exactamente qué temas repetir.
+                  Llegué al examen de Penal con mucha más seguridad.”
+                  <div class="testimonial-name">Paula, 3.º Derecho</div>
+                  <div class="testimonial-meta">Universidad pública • Aprobó Penal a la primera</div>
+                </div>
+                <div class="testimonial">
+                  “Entre trabajo y carrera no me sobraba tiempo.
+                  Con los tests diarios llevo el control del temario sin agobiarme.”
+                  <div class="testimonial-name">Álvaro, 2.º Derecho</div>
+                  <div class="testimonial-meta">Compatibilizando trabajo y estudios</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- segundo hueco para imagen o mockup adicional -->
+            <div>
+              <div class="card" style="height:100%; display:flex; flex-direction:column; justify-content:center;">
+                <div style="font-size:14px; font-weight:600; color:var(--color-secondary); margin-bottom:6px;">
+                  Espacio para otra imagen de Derecho Test
+                </div>
+                <p style="font-size:14px; color:var(--color-muted); margin-bottom:10px;">
+                  Puedes usar aquí una segunda captura: por ejemplo,
+                  la pantalla de estadísticas de progreso o el listado de asignaturas.
+                </p>
+                <div style="border-radius:12px; border:1px dashed rgba(148,163,184,0.9); padding:16px; text-align:center; font-size:12px; color:var(--color-muted);">
+                  <strong>TODO:</strong> insertar imagen<br />
+                  Ejemplo: <code>img/derecho-test-stats.png</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQs + bloque resumen beneficios -->
+      <section class="section">
+        <div class="section-inner faq-layout">
+          <div>
+            <div class="section-header">
+              <div class="section-eyebrow">preguntas frecuentes</div>
+              <h2 class="section-title">Antes de crear tu cuenta</h2>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">¿Es realmente gratis? ¿Necesito meter mi tarjeta?</div>
+              <div class="faq-a">
+                La prueba de Derecho Test es gratis y no pide tarjeta.
+                Tienes 5 tests al día para practicar asignaturas y temas concretos.
+                Cuando termine la prueba, decides si quieres seguir.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">¿Sirve para mi universidad?</div>
+              <div class="faq-a">
+                Sí. Está pensado para estudiantes del Grado en Derecho en España,
+                con una estructura de temas que encaja con el plan de estudios habitual.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">¿La IA corrige también casos prácticos?</div>
+              <div class="faq-a">
+                Además de tests, puedes practicar con preguntas abiertas y casos.
+                La IA marca qué partes están bien, qué falta y cómo mejorar tu respuesta.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">¿Cuánto tiempo tengo que usarlo para notar resultados?</div>
+              <div class="faq-a">
+                Con 20–30 minutos al día de práctica enfocada notarás rápidamente
+                que llegas al examen con más seguridad y menos improvisación.
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <div class="card-header">En resumen, con Derecho Test consigues</div>
+              <ul class="card-list">
+                <li>
+                  <span class="card-list-bullet">•</span>
+                  <span>Tests por asignaturas y temas, listos para usar.</span>
+                </li>
+                <li>
+                  <span class="card-list-bullet">•</span>
+                  <span>Corrección y feedback con IA en preguntas y casos.</span>
+                </li>
+                <li>
+                  <span class="card-list-bullet">•</span>
+                  <span>Estadísticas claras para saber qué reforzar.</span>
+                </li>
+                <li>
+                  <span class="card-list-bullet">•</span>
+                  <span>Prueba gratis sin tarjeta, 5 tests al día y cancelación cuando quieras.</span>
+                </li>
+              </ul>
+              <div style="margin-top:14px;">
+                <button class="btn btn-primary cta-button" style="width:100%; justify-content:center;">
+                  Pruébalo gratis ahora
+                </button>
+                <p style="font-size:12px; color:var(--color-muted); margin-top:8px;">
+                  Crea tu cuenta en menos de 1 minuto y prueba hoy mismo con tu siguiente asignatura.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- cierre con CTA final -->
+      <section class="section" style="padding-bottom:50px;">
+        <div class="section-inner">
+          <div class="closing-cta">
+            <div class="closing-inner">
+              <div class="closing-badge">
+                <span class="closing-dot"></span>
+                Listo para tu próximo examen
+              </div>
+              <h2 class="closing-title">Haz hoy los tests que harán que tu “yo del examen” esté tranquilo</h2>
+              <p class="closing-text">
+                En lugar de seguir estudiando sin saber si vas bien, entra en Derecho Test,
+                haz tus tests del día y deja que los datos te digan qué reforzar.
+              </p>
+
+              <div class="hero-cta-row">
+                <button class="btn btn-primary cta-button">
+                  Pruébalo gratis
+                </button>
+                <button class="btn btn-outline cta-button">
+                  Crear cuenta
+                </button>
+              </div>
+
+              <div class="closing-meta">
+                <strong>Prueba gratis sin tarjeta.</strong> 5 tests al día, cancelación cuando quieras.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Derecho Virtual · Derecho Test</div>
+        <div class="footer-links">
+          <span>Prueba gratis sin tarjeta</span>
+          <span>5 tests diarios incluidos</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // actualizar año del footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // tracking de clics en CTAs con Meta Pixel (Lead)
+    function trackLeadClick() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', {
+          content_name: 'Derecho Test - Prueba gratis',
+          content_category: 'Grado en Derecho'
+        });
+      }
+    }
+
+    document.querySelectorAll('.cta-button').forEach(function (btn) {
+      btn.addEventListener('click', trackLeadClick);
+    });
+
+    // NOTA: si en el futuro se decide optimizar campañas al evento StartTrial o CompleteRegistration,
+    // basta con sustituir 'Lead' por el evento correspondiente manteniendo esta estructura.
+  </script>
+</body>
+</html>
