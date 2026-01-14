@@ -14,7 +14,7 @@
       --color-primary: #16a34a;        /* verde CTA */
       --color-primary-dark: #15803d;
       --color-accent: #c89a3b;        /* dorado secundario */
-      --color-heading: #FFB700;       /* títulos */
+      --color-heading: #FFB700;       /* títulos y bullets */
       --color-text: #F9FAFB;
       --color-muted: #E5E7EB;
       --radius-lg: 18px;
@@ -186,9 +186,10 @@
     }
 
     .hero-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 20px;
+      align-items: center;
     }
 
     .hero-eyebrow {
@@ -249,11 +250,10 @@
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      background: #22c55e;
+      background: var(--color-heading);
     }
 
     .hero-image-wrapper {
-      margin-top: 8px;
       border-radius: 24px;
       overflow: hidden;
     }
@@ -289,10 +289,10 @@
       font-size: 14px;
     }
 
-    /* LAYOUT DE TEXTO PRINCIPAL (UNA COLUMNA) */
+    /* LAYOUT TEXTO */
     .grid-2 {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 16px;
       align-items: flex-start;
     }
@@ -330,13 +330,13 @@
       width: 18px;
       height: 18px;
       border-radius: 999px;
-      border: 1px solid rgba(248, 250, 252, 0.4);
+      border: 1px solid rgba(255, 183, 0, 0.8);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 11px;
       margin-top: 1px;
-      color: var(--color-primary);
+      color: var(--color-heading);
       background: transparent;
     }
 
@@ -391,14 +391,14 @@
       width: 26px;
       height: 26px;
       border-radius: 999px;
-      background: rgba(22, 163, 74, 0.08);
-      border: 1px solid rgba(22, 163, 74, 0.8);
+      background: rgba(255, 183, 0, 0.08);
+      border: 1px solid rgba(255, 183, 0, 0.9);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 13px;
       font-weight: 600;
-      color: var(--color-primary);
+      color: var(--color-heading);
       margin-bottom: 6px;
     }
 
@@ -509,9 +509,9 @@
     }
 
     .faq-item.open .faq-toggle {
-      background: rgba(22, 163, 74, 0.08);
-      border-color: rgba(22, 163, 74, 0.9);
-      color: var(--color-primary);
+      background: rgba(255, 183, 0, 0.08);
+      border-color: rgba(255, 183, 0, 0.9);
+      color: var(--color-heading);
     }
 
     /* CIERRE */
@@ -556,7 +556,7 @@
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      background: #22c55e;
+      background: var(--color-heading);
     }
 
     .closing-title {
@@ -608,11 +608,17 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
       .hero-title {
         font-size: 26px;
       }
       .section-title {
         font-size: 20px;
+      }
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
       }
       .stats-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -684,7 +690,7 @@
           </div>
           <div class="nav-text">
             <span class="nav-main">Derecho Virtual</span>
-            <span class="nav-sub">aprueba todas tus asignaturas</span>
+            <span class="nav-sub">aprueba tus asignaturas</span>
           </div>
         </div>
         <div class="nav-right">
