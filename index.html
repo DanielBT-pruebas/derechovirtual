@@ -7,17 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      /* Paleta inspirada en Derecho Virtual */
+      /* Paleta cálida inspirada en #2F1A11 */
+      --color-bg: #2F1A11;
+      --color-surface: #3A2317;
+      --color-card: #1F2933;
       --color-primary: #16a34a;        /* verde CTA */
       --color-primary-dark: #15803d;
-      --color-accent: #c89a3b;        /* dorado */
-      --color-secondary: #111827;     /* casi negro */
-      --color-bg: #f9fafb;
-      --color-text: #111827;
-      --color-muted: #6b7280;
-      --radius-lg: 16px;
-      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.06);
-      --max-width: 1100px;
+      --color-accent: #c89a3b;        /* dorado secundario */
+      --color-heading: #FFB700;       /* títulos */
+      --color-text: #F9FAFB;
+      --color-muted: #E5E7EB;
+      --radius-lg: 18px;
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.4);
+      --max-width: 960px;
     }
 
     * {
@@ -50,12 +52,14 @@
       flex-direction: column;
     }
 
+    /* NAV */
     .nav {
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-      background: #ffffff;
+      border-bottom: 1px solid rgba(248, 250, 252, 0.08);
+      background: #1C120C;
       position: sticky;
       top: 0;
       z-index: 20;
+      backdrop-filter: blur(10px);
     }
 
     .nav-inner {
@@ -75,19 +79,31 @@
       gap: 10px;
       font-weight: 700;
       font-size: 18px;
-      color: var(--color-secondary);
+      color: var(--color-text);
     }
 
     .nav-logo img {
-      height: 40px;
+      height: 38px;
       width: auto;
       display: block;
     }
 
+    .nav-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-main {
+      font-size: 15px;
+    }
+
     .nav-sub {
       font-size: 11px;
-      color: var(--color-muted);
-      font-weight: 500;
+      color: var(--color-heading);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
     .nav-right {
@@ -100,6 +116,7 @@
     .nav-link-muted {
       color: var(--color-muted);
       font-size: 13px;
+      opacity: 0.9;
     }
 
     .btn {
@@ -126,17 +143,17 @@
     .btn-primary:hover {
       background: var(--color-primary-dark);
       transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(22, 163, 74, 0.2);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
     }
 
     .btn-outline {
-      background: #ffffff;
-      color: var(--color-secondary);
-      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: transparent;
+      color: var(--color-text);
+      border: 1px solid rgba(249, 250, 251, 0.4);
     }
 
     .btn-outline:hover {
-      background: rgba(148, 163, 184, 0.08);
+      background: rgba(249, 250, 251, 0.06);
     }
 
     .btn-sm {
@@ -148,71 +165,56 @@
       flex: 1;
     }
 
+    /* SECCIONES GENERALES */
     .section {
-      padding: 32px 16px;
+      padding: 28px 16px;
     }
 
     .section-inner {
       max-width: var(--max-width);
       margin: 0 auto;
+      background: var(--color-surface);
+      border-radius: 22px;
+      padding: 22px 18px 20px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(248, 250, 252, 0.06);
     }
 
-    /* hero */
+    /* HERO */
     .hero {
-      padding-top: 32px;
-      padding-bottom: 28px;
+      padding-top: 30px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 32px;
-      align-items: center;
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
 
     .hero-eyebrow {
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       color: var(--color-accent);
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .hero-title {
-      font-size: 34px;
-      line-height: 1.18;
+      font-size: 30px;
+      line-height: 1.2;
       margin-bottom: 10px;
-      color: var(--color-secondary);
+      color: var(--color-heading);
     }
 
     .hero-highlight {
-      color: var(--color-primary);
+      color: #ffffff;
     }
 
     .hero-subtitle {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--color-muted);
-      margin-bottom: 16px;
-    }
-
-    .hero-benefits-row {
-      font-size: 14px;
-      color: var(--color-secondary);
-      margin-bottom: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .hero-benefit-pill {
-      border-radius: 999px;
-      padding: 4px 10px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: #ffffff;
-      font-size: 13px;
-      color: var(--color-muted);
+      margin-bottom: 12px;
     }
 
     .hero-cta-row {
@@ -226,7 +228,7 @@
     .hero-note {
       font-size: 14px;
       color: var(--color-muted);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .hero-meta {
@@ -250,97 +252,70 @@
       background: #22c55e;
     }
 
-    .hero-media-card {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      padding: 12px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-    }
-
-    .hero-media-header {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--color-secondary);
-      margin-bottom: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .hero-media-tag {
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 11px;
-      color: var(--color-muted);
-    }
-
-    .hero-media-pill {
-      font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(200, 154, 59, 0.08);
-      color: var(--color-accent);
-    }
-
-    .hero-media-img-wrapper {
-      border-radius: 18px;
+    .hero-image-wrapper {
+      margin-top: 8px;
+      border-radius: 24px;
       overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.5);
     }
 
-    /* generic section headings */
+    .hero-image-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* CABECERAS DE SECCIÓN */
     .section-header {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .section-eyebrow {
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       color: var(--color-accent);
       font-weight: 700;
       margin-bottom: 6px;
     }
 
     .section-title {
-      font-size: 24px;
-      color: var(--color-secondary);
+      font-size: 22px;
+      color: var(--color-heading);
       margin-bottom: 6px;
     }
 
     .section-subtitle {
       color: var(--color-muted);
-      font-size: 15px;
+      font-size: 14px;
     }
 
-    /* layout helpers */
+    /* LAYOUT DE TEXTO PRINCIPAL (UNA COLUMNA) */
     .grid-2 {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 20px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+      align-items: flex-start;
     }
 
     .card {
-      background: #ffffff;
+      background: var(--color-card);
       border-radius: var(--radius-lg);
-      padding: 18px 18px 14px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.22);
+      padding: 16px 14px 14px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(248, 250, 252, 0.04);
     }
 
     .card-header {
       font-weight: 600;
       margin-bottom: 8px;
-      color: var(--color-secondary);
-      font-size: 16px;
+      color: var(--color-heading);
+      font-size: 15px;
     }
 
     .feature-list {
       display: grid;
       gap: 8px;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .feature-item {
@@ -355,87 +330,87 @@
       width: 18px;
       height: 18px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(248, 250, 252, 0.4);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 11px;
       margin-top: 1px;
-      color: var(--color-primary-dark);
-      background: #ffffff;
+      color: var(--color-primary);
+      background: transparent;
     }
 
-    /* stats */
+    /* STATS */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 10px;
-      margin-bottom: 18px;
+      gap: 12px;
+      margin-top: 8px;
+      margin-bottom: 16px;
     }
 
     .stat-card {
-      background: #ffffff;
+      background: var(--color-card);
       border-radius: 14px;
-      padding: 12px 14px;
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      box-shadow: var(--shadow-soft);
+      padding: 10px 12px;
+      border: 1px solid rgba(248, 250, 252, 0.06);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
       font-size: 14px;
       color: var(--color-muted);
     }
 
     .stat-value {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
-      color: var(--color-primary-dark);
+      color: var(--color-heading);
       margin-bottom: 4px;
     }
 
     .stat-label {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--color-muted);
     }
 
-    /* steps */
+    /* STEPS */
     .steps {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 12px;
+      gap: 12px;
+      margin-top: 10px;
     }
 
     .step {
-      background: #ffffff;
+      background: var(--color-card);
       border-radius: var(--radius-lg);
-      padding: 16px 16px 14px;
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      box-shadow: var(--shadow-soft);
+      padding: 14px 12px 12px;
+      border: 1px solid rgba(248, 250, 252, 0.06);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
     }
 
     .step-number {
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
       border-radius: 999px;
-      background: rgba(22, 163, 74, 0.06);
-      border: 1px solid rgba(22, 163, 74, 0.4);
+      background: rgba(22, 163, 74, 0.08);
+      border: 1px solid rgba(22, 163, 74, 0.8);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      color: var(--color-primary-dark);
-      margin-bottom: 8px;
+      color: var(--color-primary);
+      margin-bottom: 6px;
     }
 
     .step-title {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
       margin-bottom: 4px;
-      color: var(--color-secondary);
+      color: var(--color-heading);
     }
 
     .step-text {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--color-muted);
     }
 
@@ -443,81 +418,59 @@
       margin-top: 16px;
     }
 
-    /* testimonials */
+    /* TESTIMONIOS */
     .testimonials {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      gap: 12px;
+      margin-top: 10px;
     }
 
     .testimonial {
-      background: #ffffff;
+      background: var(--color-card);
       border-radius: var(--radius-lg);
-      padding: 14px 14px 12px;
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      font-size: 14px;
+      padding: 12px 12px 10px;
+      border: 1px solid rgba(248, 250, 252, 0.06);
+      font-size: 13px;
       color: var(--color-text);
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
     }
 
     .testimonial-name {
       margin-top: 8px;
       font-weight: 600;
       font-size: 13px;
-      color: var(--color-secondary);
+      color: var(--color-heading);
     }
 
     .testimonial-meta {
-      font-size: 12px;
-      color: var(--color-muted);
-    }
-
-    /* extra image card */
-    .image-card {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      padding: 12px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      height: 100%;
-    }
-
-    .image-card-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--color-secondary);
-    }
-
-    .image-card-text {
-      font-size: 13px;
+      font-size: 11px;
       color: var(--color-muted);
     }
 
     /* FAQ */
     .faq-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 22px;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 18px;
       align-items: flex-start;
     }
 
     .faq-list {
       display: grid;
-      gap: 10px;
+      gap: 8px;
     }
 
     .faq-item {
-      background: #ffffff;
+      background: var(--color-card);
       border-radius: 12px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      border: 1px solid rgba(248, 250, 252, 0.08);
       overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
     }
 
     .faq-header {
-      padding: 10px 12px;
+      padding: 9px 11px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -528,14 +481,14 @@
     .faq-q {
       font-weight: 600;
       font-size: 14px;
-      color: var(--color-secondary);
+      color: var(--color-heading);
     }
 
     .faq-toggle {
       width: 20px;
       height: 20px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.8);
+      border: 1px solid rgba(248, 250, 252, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -545,8 +498,8 @@
     }
 
     .faq-body {
-      padding: 0 12px 10px;
-      font-size: 14px;
+      padding: 0 11px 9px;
+      font-size: 13px;
       color: var(--color-muted);
       display: none;
     }
@@ -556,28 +509,29 @@
     }
 
     .faq-item.open .faq-toggle {
-      background: rgba(22, 163, 74, 0.05);
-      border-color: rgba(22, 163, 74, 0.8);
-      color: var(--color-primary-dark);
+      background: rgba(22, 163, 74, 0.08);
+      border-color: rgba(22, 163, 74, 0.9);
+      color: var(--color-primary);
     }
 
-    /* closing CTA */
+    /* CIERRE */
     .closing-cta {
-      background: linear-gradient(135deg, #111827, #111827 40%, #1f2937);
-      border-radius: 20px;
-      padding: 22px 20px 20px;
+      background: linear-gradient(145deg, #1a0f09, #24140c 45%, #111827);
+      border-radius: 22px;
+      padding: 20px 18px 18px;
       color: #e5e7eb;
-      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.6);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.8);
       position: relative;
       overflow: hidden;
+      border: 1px solid rgba(248, 250, 252, 0.12);
     }
 
     .closing-cta::before {
       content: "";
       position: absolute;
       inset: -40%;
-      background: radial-gradient(circle at 10% 0%, rgba(22, 163, 74, 0.3), transparent 55%);
-      opacity: 0.7;
+      background: radial-gradient(circle at 10% 0%, rgba(255, 183, 0, 0.32), transparent 55%);
+      opacity: 0.9;
       pointer-events: none;
     }
 
@@ -590,8 +544,8 @@
       font-size: 11px;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(156, 163, 175, 0.7);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(156, 163, 175, 0.8);
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -606,30 +560,31 @@
     }
 
     .closing-title {
-      font-size: 22px;
+      font-size: 20px;
       margin-bottom: 6px;
+      color: var(--color-heading);
     }
 
     .closing-text {
       font-size: 14px;
-      color: #d1d5db;
-      margin-bottom: 14px;
+      color: #e5e7eb;
+      margin-bottom: 12px;
     }
 
     .closing-meta {
       font-size: 12px;
-      color: #9ca3af;
-      margin-top: 8px;
+      color: #d1d5db;
+      margin-top: 6px;
     }
 
     .closing-meta strong {
-      color: #e5e7eb;
+      color: #ffffff;
     }
 
-    /* footer */
+    /* FOOTER */
     footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.25);
-      background: #ffffff;
+      border-top: 1px solid rgba(248, 250, 252, 0.12);
+      background: #1C120C;
       font-size: 12px;
       color: var(--color-muted);
     }
@@ -637,42 +592,29 @@
     .footer-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 12px 16px 16px;
+      padding: 10px 16px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .footer-links {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
-    /* responsive */
-    @media (max-width: 960px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-media-card {
-        max-width: 520px;
-        margin: 0 auto;
-      }
-      .stats-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero-title {
-        font-size: 28px;
+        font-size: 26px;
       }
       .section-title {
-        font-size: 22px;
+        font-size: 20px;
       }
-      .grid-2 {
+      .stats-grid {
         grid-template-columns: minmax(0, 1fr);
       }
       .steps {
@@ -684,11 +626,8 @@
       .faq-layout {
         grid-template-columns: minmax(0, 1fr);
       }
-      .stats-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .section {
-        padding-inline: 16px;
+      .nav-inner {
+        justify-content: space-between;
       }
       .hero-cta-row {
         flex-direction: column;
@@ -699,15 +638,9 @@
         width: 100%;
         justify-content: center;
       }
-      .nav-inner {
-        justify-content: space-between;
-      }
     }
 
     @media (max-width: 480px) {
-      .hero {
-        padding-top: 24px;
-      }
       .hero-subtitle {
         font-size: 15px;
       }
@@ -749,13 +682,13 @@
           <div class="nav-logo">
             <img src="img/logo-derecho-virtual.png" alt="Logo Derecho Virtual" />
           </div>
-          <div>
-            Derecho Virtual
-            <div class="nav-sub">Derecho Test</div>
+          <div class="nav-text">
+            <span class="nav-main">Derecho Virtual</span>
+            <span class="nav-sub">aprueba todas tus asignaturas</span>
           </div>
         </div>
         <div class="nav-right">
-          <span class="nav-link-muted">Grado en Derecho · Exámenes</span>
+          <span class="nav-link-muted">5 tests/día gratis</span>
           <button class="btn btn-primary btn-sm cta-button">
             Pruébalo gratis
           </button>
@@ -766,7 +699,7 @@
     <main>
       <!-- HERO -->
       <section class="section hero">
-        <div class="section-inner hero-grid">
+        <div class="section-inner hero-inner">
           <div>
             <div class="hero-eyebrow">app de tests para estudiantes de derecho</div>
             <h1 class="hero-title">
@@ -777,12 +710,6 @@
               Derecho Test es la app para estudiantes del Grado en Derecho que quieren llegar al examen
               habiendo practicado preguntas reales por asignaturas y temas, con feedback de IA y estadísticas claras.
             </p>
-
-            <div class="hero-benefits-row">
-              <span class="hero-benefit-pill">Tests por asignatura y tema</span>
-              <span class="hero-benefit-pill">Feedback razonado con IA</span>
-              <span class="hero-benefit-pill">Estadísticas para saber qué reforzar</span>
-            </div>
 
             <div class="hero-cta-row">
               <button class="btn btn-primary cta-button">
@@ -803,15 +730,8 @@
             </div>
           </div>
 
-          <!-- mockup principal -->
-          <div class="hero-media-card">
-            <div class="hero-media-header">
-              <div class="hero-media-tag">vista de la plataforma</div>
-              <div class="hero-media-pill">Derecho Test</div>
-            </div>
-            <div class="hero-media-img-wrapper">
-              <img src="img/vista-plataforma.png" alt="Pantalla de un test de Derecho en Derecho Test con opciones y resultados" />
-            </div>
+          <div class="hero-image-wrapper">
+            <img src="img/vista-plataforma.png" alt="Pantalla de un test de Derecho en Derecho Test con opciones y resultados" />
           </div>
         </div>
       </section>
@@ -941,7 +861,6 @@
             </p>
           </div>
 
-          <!-- stats -->
           <div class="stats-grid">
             <div class="stat-card">
               <div class="stat-value">13.000+</div>
@@ -957,35 +876,18 @@
             </div>
           </div>
 
-          <div class="grid-2" style="align-items: stretch; margin-top: 6px;">
-            <div>
-              <div class="testimonials">
-                <div class="testimonial">
-                  “Pasé de estudiar sin rumbo a saber exactamente qué temas repetir.
-                  Llegué al examen de Penal con mucha más seguridad.”
-                  <div class="testimonial-name">Paula, 3.º Derecho</div>
-                  <div class="testimonial-meta">Universidad pública · Aprobó Penal a la primera</div>
-                </div>
-                <div class="testimonial">
-                  “Entre trabajo y carrera no me sobraba tiempo.
-                  Con los tests diarios llevo el control del temario sin agobiarme.”
-                  <div class="testimonial-name">Álvaro, 2.º Derecho</div>
-                  <div class="testimonial-meta">Compatibiliza estudios y trabajo</div>
-                </div>
-              </div>
+          <div class="testimonials">
+            <div class="testimonial">
+              “Pasé de estudiar sin rumbo a saber exactamente qué temas repetir.
+              Llegué al examen de Penal con mucha más seguridad.”
+              <div class="testimonial-name">Paula, 3.º Derecho</div>
+              <div class="testimonial-meta">Universidad pública · Aprobó Penal a la primera</div>
             </div>
-
-            <div>
-              <div class="image-card">
-                <div class="image-card-title">Estadísticas que te dicen qué reforzar</div>
-                <p class="image-card-text">
-                  Visualiza tu porcentaje de aciertos por asignatura y tema para no ir al examen a ciegas.
-                  Saber dónde fallas te permite planificar mejor tus últimos días de estudio.
-                </p>
-                <div class="hero-media-img-wrapper">
-                  <img src="img/derecho-test-stats.png" alt="Pantalla de estadísticas de progreso en Derecho Test con aciertos por tema" />
-                </div>
-              </div>
+            <div class="testimonial">
+              “Entre trabajo y carrera no me sobraba tiempo.
+              Con los tests diarios llevo el control del temario sin agobiarme.”
+              <div class="testimonial-name">Álvaro, 2.º Derecho</div>
+              <div class="testimonial-meta">Compatibiliza estudios y trabajo</div>
             </div>
           </div>
 
@@ -1096,7 +998,7 @@
       </section>
 
       <!-- CIERRE -->
-      <section class="section" style="padding-bottom:44px;">
+      <section class="section" style="padding-bottom:36px;">
         <div class="section-inner">
           <div class="closing-cta">
             <div class="closing-inner">
