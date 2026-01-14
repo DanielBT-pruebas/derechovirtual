@@ -543,4 +543,549 @@
     .closing-badge {
       font-size: 12px;
       padding: 4px 10px;
-      border-radius: 999
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(156, 163, 175, 0.8);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .closing-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--color-heading);
+    }
+
+    .closing-title {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: var(--color-heading);
+    }
+
+    .closing-text {
+      font-size: 16px;
+      color: #e5e7eb;
+      margin-bottom: 12px;
+    }
+
+    .closing-meta {
+      font-size: 13px;
+      color: #d1d5db;
+      margin-top: 6px;
+    }
+
+    .closing-meta strong {
+      color: #ffffff;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(248, 250, 252, 0.12);
+      background: #1C120C;
+      font-size: 13px;
+      color: var(--color-muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 10px 16px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      .section-title {
+        font-size: 22px;
+      }
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .stats-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .testimonials {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .faq-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .nav-inner {
+        justify-content: space-between;
+      }
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-subtitle {
+        font-size: 16px;
+      }
+      .nav-link-muted {
+        display: none;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+
+  <!-- Meta Pixel (ID genérico de ejemplo) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod ?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '123456789012345'); // TODO: sustituir por el ID real del píxel
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img alt="facebook pixel" height="1" width="1"
+         style="display:none"
+         src="https://www.facebook.com/tr?id=123456789012345&ev=PageView&noscript=1" />
+  </noscript>
+</head>
+
+<body>
+  <div class="page">
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="nav-brand">
+          <div class="nav-logo">
+            <img src="img/logo-derecho-virtual.png" alt="Logo Derecho Virtual" />
+          </div>
+          <div class="nav-text">
+            <span class="nav-main">Derecho Virtual</span>
+            <span class="nav-sub">aprueba tus asignaturas</span>
+          </div>
+        </div>
+        <div class="nav-right">
+          <span class="nav-link-muted">5 tests/día gratis</span>
+          <button class="btn btn-primary btn-sm cta-button">
+            Pruébalo gratis
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="section hero">
+        <div class="section-inner hero-inner">
+          <div>
+            <div class="hero-eyebrow">plataforma de tests para estudiantes de derecho</div>
+            <h1 class="hero-title">
+              Aprueba tus exámenes de Derecho practicando
+              <span class="hero-highlight">tests reales cada día</span>
+            </h1>
+            <p class="hero-subtitle">
+              Derecho Test es la plataforma para estudiantes del Grado en Derecho que quieren llegar al examen
+              habiendo practicado preguntas reales por asignaturas y temas, con feedback de IA y estadísticas claras.
+            </p>
+
+            <div class="hero-cta-row">
+              <button class="btn btn-primary cta-button">
+                Pruébalo gratis
+              </button>
+            </div>
+
+            <p class="hero-note">
+              <strong>5 tests diarios gratis · Sin tarjeta · Cancela cuando quieras.</strong>
+            </p>
+
+            <div class="hero-meta">
+              <span>
+                <span class="hero-meta-dot"></span>
+                Más de 13.000 alumnos en Derecho Virtual
+              </span>
+              <span>Funciona para cualquier universidad en España</span>
+            </div>
+          </div>
+
+          <div class="hero-image-wrapper">
+            <img src="img/vista-plataforma.png" alt="Pantalla de un test de Derecho en la plataforma Derecho Test con opciones y resultados" />
+          </div>
+        </div>
+      </section>
+
+      <!-- POR QUÉ SOLO APUNTES NO BASTAN -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-eyebrow">por qué solo apuntes no bastan</div>
+            <h2 class="section-title">De “subrayar a ciegas” a practicar como en el examen</h2>
+            <p class="section-subtitle">
+              Memorizar sin practicar es lo que hace que muchos estudiantes de Derecho se atasquen.
+              Derecho Test convierte tus temas en tests y casos para que entrenes como si ya estuvieras en el examen.
+            </p>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">Lo que pasa con el método de siempre</div>
+              <div class="feature-list">
+                <div class="feature-item">
+                  <div class="feature-icon">–</div>
+                  <div>Muchas horas subrayando apuntes, pero casi ningún test tipo examen.</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">–</div>
+                  <div>No sabes bien qué cae ni si llevas el temario al ritmo correcto.</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">–</div>
+                  <div>Llegas al examen sin haber practicado bajo presión de tiempo real.</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">–</div>
+                  <div>Estudias todo por igual, aunque haya temas que ya tienes más que dominados.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">Cómo te ayuda la plataforma Derecho Test</div>
+              <div class="feature-list">
+                <div class="feature-item">
+                  <div class="feature-icon">✔</div>
+                  <div>Tests por asignaturas y temas para practicar justo lo que necesitas esta semana.</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">✔</div>
+                  <div>Feedback con IA que te explica el porqué de cada respuesta, no solo si aciertas o fallas.</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">✔</div>
+                  <div>Estadísticas de aciertos por tema para saber qué reforzar antes del examen.</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">✔</div>
+                  <div>Menos horas “a lo loco” y más práctica que realmente sube tu nota.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-cta">
+            <button class="btn btn-primary cta-button">
+              Pruébalo gratis
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CÓMO FUNCIONA -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-eyebrow">cómo funciona</div>
+            <h2 class="section-title">Entra, elige asignatura y haz tus tests del día</h2>
+            <p class="section-subtitle">
+              Pensado para que puedas conectarte 20–30 minutos, practicar y salir sabiendo
+              exactamente qué estás mejorando dentro de la plataforma.
+            </p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-title">Elige asignatura y tema</div>
+              <div class="step-text">
+                Selecciona Civil, Penal, Constitucional, etc. y el tema que estás preparando ahora mismo.
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-title">Haz tests como en el examen</div>
+              <div class="step-text">
+                Responde preguntas y casos con tiempo limitado. La plataforma corrige al instante y te da la solución razonada.
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-title">Sigue tus estadísticas</div>
+              <div class="step-text">
+                Ve tu porcentaje de aciertos por tema y deja que la IA te indique qué reforzar antes del examen.
+              </div>
+            </div>
+          </div>
+
+          <div class="section-cta">
+            <button class="btn btn-primary cta-button">
+              Pruébalo gratis
+            </button>
+            <p style="font-size:14px; color:var(--color-muted); margin-top:6px;">
+              Empieza hoy con tu siguiente asignatura y prueba cómo se siente practicar con tests reales.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTADOS + STATS + TESTIMONIOS -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-eyebrow">resultados de alumnos</div>
+            <h2 class="section-title">Respaldado por miles de estudiantes de Derecho</h2>
+            <p class="section-subtitle">
+              Derecho Virtual ya ha ayudado a más de 13.000 alumnos a aprobar. Derecho Test reúne toda esa experiencia
+              en una plataforma de práctica diaria para tus exámenes.
+            </p>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value">13.000+</div>
+              <div class="stat-label">alumnos en Derecho Virtual</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">20–30 min</div>
+              <div class="stat-label">al día para notar mejora real</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">5 tests</div>
+              <div class="stat-label">al día gratis, sin tarjeta</div>
+            </div>
+          </div>
+
+          <div class="testimonials">
+            <div class="testimonial">
+              “Pasé de estudiar sin rumbo a saber exactamente qué temas repetir.
+              Llegué al examen de Penal con mucha más seguridad.”
+              <div class="testimonial-name">Paula, 3.º Derecho</div>
+              <div class="testimonial-meta">Universidad pública · Aprobó Penal a la primera</div>
+            </div>
+            <div class="testimonial">
+              “Entre trabajo y carrera no me sobraba tiempo.
+              Con los tests diarios llevo el control del temario sin agobiarme.”
+              <div class="testimonial-name">Álvaro, 2.º Derecho</div>
+              <div class="testimonial-meta">Compatibiliza estudios y trabajo</div>
+            </div>
+            <div class="testimonial">
+              “Me costaba mucho saber si estaba preparada o no.
+              Con las estadísticas de la plataforma veo de un vistazo qué asignaturas tengo listas y cuáles necesito repasar.”
+              <div class="testimonial-name">Lucía, 1.º Derecho</div>
+              <div class="testimonial-meta">Universidad privada · Subió su media en el segundo cuatrimestre</div>
+            </div>
+          </div>
+
+          <div class="section-cta">
+            <button class="btn btn-primary cta-button">
+              Pruébalo gratis
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ + RESUMEN BENEFICIOS -->
+      <section class="section">
+        <div class="section-inner faq-layout">
+          <div>
+            <div class="section-header">
+              <div class="section-eyebrow">preguntas frecuentes</div>
+              <h2 class="section-title">Antes de registrarte</h2>
+              <p class="section-subtitle">
+                Resolvemos las dudas típicas antes de empezar: precio, universidades, uso de IA
+                y tiempo necesario para notar resultados usando la plataforma.
+              </p>
+            </div>
+
+            <div class="faq-list">
+              <div class="faq-item open">
+                <div class="faq-header">
+                  <div class="faq-q">¿Es realmente gratis? ¿Necesito meter mi tarjeta?</div>
+                  <div class="faq-toggle">–</div>
+                </div>
+                <div class="faq-body">
+                  La prueba de Derecho Test es gratis y no pide tarjeta.
+                  Tienes 5 tests diarios para practicar asignaturas y temas concretos.
+                  Cuando termine la prueba, decides si quieres seguir. Sin permanencias ni letra pequeña.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <div class="faq-q">¿Sirve para mi universidad?</div>
+                  <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-body">
+                  Sí. La plataforma Derecho Test está pensada para estudiantes del Grado en Derecho en España,
+                  con una estructura de temas que encaja con el plan de estudios habitual,
+                  independientemente de la universidad en la que estés matriculado.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <div class="faq-q">¿La IA corrige también casos prácticos?</div>
+                  <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-body">
+                  Además de tests, puedes practicar con preguntas abiertas y casos prácticos.
+                  La IA marca qué partes están bien, qué falta y cómo mejorar tu razonamiento,
+                  para que no solo memorices, sino que aprendas a argumentar mejor.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <div class="faq-q">¿Cuánto tiempo tengo que usarla para notar resultados?</div>
+                  <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-body">
+                  Con 20–30 minutos al día de práctica enfocada dentro de la plataforma empezarás a notar que llegas
+                  al examen con más seguridad y menos improvisación. Lo importante no es estudiar más horas,
+                  sino practicar mejor.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <div class="card-header">En resumen, con la plataforma Derecho Test consigues</div>
+              <div class="feature-list">
+                <div class="feature-item">
+                  <div class="feature-icon">•</div>
+                  <div>Tests por asignaturas y temas para practicar lo que toca en cada momento.</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">•</div>
+                  <div>Corrección y feedback con IA en preguntas y casos prácticos.</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">•</div>
+                  <div>Estadísticas claras para ver tus puntos fuertes y débiles.</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">•</div>
+                  <div>Prueba gratis sin tarjeta, 5 tests al día y cancelación cuando quieras.</div>
+                </div>
+              </div>
+              <div style="margin-top:14px;">
+                <button class="btn btn-primary cta-button" style="width:100%; justify-content:center;">
+                  Pruébalo gratis
+                </button>
+                <p style="font-size:13px; color:var(--color-muted); margin-top:8px;">
+                  Crea tu cuenta gratis en menos de 1 minuto y haz hoy los tests que harán que tu “yo del examen” llegue más tranquilo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CIERRE -->
+      <section class="section" style="padding-bottom:36px;">
+        <div class="section-inner">
+          <div class="closing-cta">
+            <div class="closing-inner">
+              <div class="closing-badge">
+                <span class="closing-dot"></span>
+                Listo para tu próximo examen
+              </div>
+              <h2 class="closing-title">Haz hoy los tests que harán que tu “yo del examen” te lo agradezca</h2>
+              <p class="closing-text">
+                En lugar de seguir estudiando sin saber si vas bien, entra en Derecho Test,
+                haz tus tests del día y deja que los datos de la plataforma te digan qué reforzar.
+                Así llegas al examen con práctica real, no solo con apuntes subrayados.
+              </p>
+
+              <div class="hero-cta-row">
+                <button class="btn btn-primary cta-button">
+                  Pruébalo gratis
+                </button>
+              </div>
+
+              <div class="closing-meta">
+                <strong>Prueba gratis sin tarjeta.</strong> 5 tests al día, cancelación cuando quieras.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Derecho Virtual · Derecho Test</div>
+        <div class="footer-links">
+          <span>Prueba gratis sin tarjeta</span>
+          <span>5 tests diarios incluidos</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Año footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Tracking de clics en CTAs con Meta Pixel (Lead)
+    function trackLeadClick() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', {
+          content_name: 'Derecho Test - Prueba gratis',
+          content_category: 'Grado en Derecho'
+        });
+      }
+    }
+
+    document.querySelectorAll('.cta-button').forEach(function (btn) {
+      btn.addEventListener('click', trackLeadClick);
+    });
+
+    // FAQ acordeones
+    document.querySelectorAll('.faq-item').forEach(function (item) {
+      var header = item.querySelector('.faq-header');
+      header.addEventListener('click', function () {
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function (i) {
+          i.classList.remove('open');
+          var toggle = i.querySelector('.faq-toggle');
+          if (toggle) toggle.textContent = '+';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          var toggle = item.querySelector('.faq-toggle');
+          if (toggle) toggle.textContent = '–';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
