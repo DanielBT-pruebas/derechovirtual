@@ -33,7 +33,7 @@
       background: var(--color-bg);
       color: var(--color-text);
       line-height: 1.6;
-      font-size: 18px; /* antes 16px */
+      font-size: 18px; /* aumentado desde 16px */
     }
 
     a {
@@ -371,7 +371,14 @@
       color: var(--color-muted);
     }
 
-    /* STEPS */
+    /* STEPS + NUEVA IMAGEN */
+    .how-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 18px;
+      align-items: flex-start;
+    }
+
     .steps {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -414,8 +421,40 @@
       color: var(--color-muted);
     }
 
+    .how-image-card {
+      background: var(--color-card);
+      border-radius: var(--radius-lg);
+      padding: 16px 14px 14px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(248, 250, 252, 0.06);
+    }
+
+    .how-image-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-heading);
+      margin-bottom: 6px;
+    }
+
+    .how-image-text {
+      font-size: 15px;
+      color: var(--color-muted);
+      margin-bottom: 10px;
+    }
+
+    .how-image-wrapper {
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
     .section-cta {
       margin-top: 18px;
+      text-align: center; /* centra CTAs en bloques a una columna */
+    }
+
+    .section-cta .btn {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* TESTIMONIOS */
@@ -632,6 +671,9 @@
       .faq-layout {
         grid-template-columns: minmax(0, 1fr);
       }
+      .how-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
       .nav-inner {
         justify-content: space-between;
       }
@@ -690,7 +732,7 @@
           </div>
           <div class="nav-text">
             <span class="nav-main">Derecho Virtual</span>
-            <span class="nav-sub">aprueba tus asignaturas</span>
+            <span class="nav-sub">aprueba todas tus asignaturas</span>
           </div>
         </div>
         <div class="nav-right">
@@ -808,49 +850,64 @@
         </div>
       </section>
 
-      <!-- CÓMO FUNCIONA -->
+      <!-- CÓMO FUNCIONA + SEGUNDA IMAGEN -->
       <section class="section">
         <div class="section-inner">
-          <div class="section-header">
-            <div class="section-eyebrow">cómo funciona</div>
-            <h2 class="section-title">Entra, elige asignatura y haz tus tests del día</h2>
-            <p class="section-subtitle">
-              Pensado para que puedas conectarte 20–30 minutos, practicar y salir sabiendo
-              exactamente qué estás mejorando dentro de la plataforma.
-            </p>
-          </div>
+          <div class="how-layout">
+            <div>
+              <div class="section-header">
+                <div class="section-eyebrow">cómo funciona</div>
+                <h2 class="section-title">Entra, elige asignatura y haz tus tests del día</h2>
+                <p class="section-subtitle">
+                  Pensado para que puedas conectarte 20–30 minutos, practicar y salir sabiendo
+                  exactamente qué estás mejorando dentro de la plataforma.
+                </p>
+              </div>
 
-          <div class="steps">
-            <div class="step">
-              <div class="step-number">1</div>
-              <div class="step-title">Elige asignatura y tema</div>
-              <div class="step-text">
-                Selecciona Civil, Penal, Constitucional, etc. y el tema que estás preparando ahora mismo.
+              <div class="steps">
+                <div class="step">
+                  <div class="step-number">1</div>
+                  <div class="step-title">Elige asignatura y tema</div>
+                  <div class="step-text">
+                    Selecciona Civil, Penal, Constitucional, etc. y el tema que estás preparando ahora mismo.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">2</div>
+                  <div class="step-title">Haz tests como en el examen</div>
+                  <div class="step-text">
+                    Responde preguntas y casos con tiempo limitado. La plataforma corrige al instante y te da la solución razonada.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-number">3</div>
+                  <div class="step-title">Sigue tus estadísticas</div>
+                  <div class="step-text">
+                    Ve tu porcentaje de aciertos por tema y deja que la IA te indique qué reforzar antes del examen.
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="step">
-              <div class="step-number">2</div>
-              <div class="step-title">Haz tests como en el examen</div>
-              <div class="step-text">
-                Responde preguntas y casos con tiempo limitado. La plataforma corrige al instante y te da la solución razonada.
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-number">3</div>
-              <div class="step-title">Sigue tus estadísticas</div>
-              <div class="step-text">
-                Ve tu porcentaje de aciertos por tema y deja que la IA te indique qué reforzar antes del examen.
-              </div>
-            </div>
-          </div>
 
-          <div class="section-cta">
-            <button class="btn btn-primary cta-button">
-              Pruébalo gratis
-            </button>
-            <p style="font-size:14px; color:var(--color-muted); margin-top:6px;">
-              Empieza hoy con tu siguiente asignatura y prueba cómo se siente practicar con tests reales.
-            </p>
+              <div class="section-cta">
+                <button class="btn btn-primary cta-button">
+                  Pruébalo gratis
+                </button>
+                <p style="font-size:14px; color:var(--color-muted); margin-top:6px;">
+                  Empieza hoy con tu siguiente asignatura y prueba cómo se siente practicar con tests reales.
+                </p>
+              </div>
+            </div>
+
+            <div class="how-image-card">
+              <div class="how-image-title">Un día típico estudiando con Derecho Test</div>
+              <p class="how-image-text">
+                Entra en la plataforma, elige la asignatura de tu próximo examen y completa tus tests del día.
+                En menos de 30 minutos tendrás claras tus fortalezas y los temas que necesitas repasar.
+              </p>
+              <div class="how-image-wrapper">
+                <img src="img/estudiante-derecho.png" alt="Estudiante de Derecho usando la plataforma Derecho Test en un portátil, con apuntes al lado" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -996,8 +1053,8 @@
                   <div>Prueba gratis sin tarjeta, 5 tests al día y cancelación cuando quieras.</div>
                 </div>
               </div>
-              <div style="margin-top:14px;">
-                <button class="btn btn-primary cta-button" style="width:100%; justify-content:center;">
+              <div class="section-cta" style="margin-top:14px;">
+                <button class="btn btn-primary cta-button" style="width:100%; max-width:260px;">
                   Pruébalo gratis
                 </button>
                 <p style="font-size:13px; color:var(--color-muted); margin-top:8px;">
@@ -1025,7 +1082,7 @@
                 Así llegas al examen con práctica real, no solo con apuntes subrayados.
               </p>
 
-              <div class="hero-cta-row">
+              <div class="hero-cta-row" style="justify-content:flex-start;">
                 <button class="btn btn-primary cta-button">
                   Pruébalo gratis
                 </button>
