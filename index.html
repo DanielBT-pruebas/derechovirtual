@@ -7,14 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      /* Paleta cálida inspirada en #2F1A11 */
       --color-bg: #2F1A11;
       --color-surface: #3A2317;
       --color-card: #1F2933;
-      --color-primary: #16a34a;        /* verde CTA */
+      --color-primary: #16a34a;
       --color-primary-dark: #15803d;
-      --color-accent: #c89a3b;        /* dorado secundario */
-      --color-heading: #FFB700;       /* títulos y bullets */
+      --color-accent: #c89a3b;
+      --color-heading: #FFB700;
       --color-text: #F9FAFB;
       --color-muted: #E5E7EB;
       --radius-lg: 18px;
@@ -33,7 +32,7 @@
       background: var(--color-bg);
       color: var(--color-text);
       line-height: 1.6;
-      font-size: 18px; /* aumentado desde 16px */
+      font-size: 18px;
     }
 
     a {
@@ -449,7 +448,7 @@
 
     .section-cta {
       margin-top: 18px;
-      text-align: center; /* centra CTAs en bloques a una columna */
+      text-align: center;
     }
 
     .section-cta .btn {
@@ -468,15 +467,38 @@
     .testimonial {
       background: var(--color-card);
       border-radius: var(--radius-lg);
-      padding: 12px 12px 10px;
+      padding: 14px 12px 12px;
       border: 1px solid rgba(248, 250, 252, 0.06);
       font-size: 15px;
       color: var(--color-text);
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid rgba(255, 183, 0, 0.9);
+    }
+
+    .testimonial-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
     .testimonial-name {
-      margin-top: 8px;
       font-weight: 600;
       font-size: 14px;
       color: var(--color-heading);
@@ -485,6 +507,11 @@
     .testimonial-meta {
       font-size: 12px;
       color: var(--color-muted);
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      color: var(--color-text);
     }
 
     /* FAQ */
@@ -712,7 +739,7 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '123456789012345'); // TODO: sustituir por el ID real del píxel
+    fbq('init', '123456789012345');
     fbq('track', 'PageView');
   </script>
   <noscript>
@@ -887,15 +914,6 @@
                   </div>
                 </div>
               </div>
-
-              <div class="section-cta">
-                <button class="btn btn-primary cta-button">
-                  Pruébalo gratis
-                </button>
-                <p style="font-size:14px; color:var(--color-muted); margin-top:6px;">
-                  Empieza hoy con tu siguiente asignatura y prueba cómo se siente practicar con tests reales.
-                </p>
-              </div>
             </div>
 
             <div class="how-image-card">
@@ -908,6 +926,16 @@
                 <img src="img/estudiante-derecho.png" alt="Estudiante de Derecho usando la plataforma Derecho Test en un portátil, con apuntes al lado" />
               </div>
             </div>
+          </div>
+
+          <!-- CTA centrado a ancho completo del bloque -->
+          <div class="section-cta">
+            <button class="btn btn-primary cta-button">
+              Pruébalo gratis
+            </button>
+            <p style="font-size:14px; color:var(--color-muted); margin-top:6px;">
+              Empieza hoy con tu siguiente asignatura y prueba cómo se siente practicar con tests reales.
+            </p>
           </div>
         </div>
       </section>
@@ -941,22 +969,51 @@
 
           <div class="testimonials">
             <div class="testimonial">
-              “Pasé de estudiar sin rumbo a saber exactamente qué temas repetir.
-              Llegué al examen de Penal con mucha más seguridad.”
-              <div class="testimonial-name">Paula, 3.º Derecho</div>
-              <div class="testimonial-meta">Universidad pública · Aprobó Penal a la primera</div>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img src="img/avatar-paula.png" alt="Retrato de Paula, estudiante de Derecho" />
+                </div>
+                <div class="testimonial-info">
+                  <div class="testimonial-name">Paula, 3.º Derecho</div>
+                  <div class="testimonial-meta">Universidad pública · Aprobó Penal a la primera</div>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                “Pasé de estudiar sin rumbo a saber exactamente qué temas repetir.
+                Llegué al examen de Penal con mucha más seguridad.”
+              </div>
             </div>
+
             <div class="testimonial">
-              “Entre trabajo y carrera no me sobraba tiempo.
-              Con los tests diarios llevo el control del temario sin agobiarme.”
-              <div class="testimonial-name">Álvaro, 2.º Derecho</div>
-              <div class="testimonial-meta">Compatibiliza estudios y trabajo</div>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img src="img/avatar-alvaro.png" alt="Retrato de Álvaro, estudiante de Derecho" />
+                </div>
+                <div class="testimonial-info">
+                  <div class="testimonial-name">Álvaro, 2.º Derecho</div>
+                  <div class="testimonial-meta">Compatibiliza estudios y trabajo</div>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                “Entre trabajo y carrera no me sobraba tiempo.
+                Con los tests diarios llevo el control del temario sin agobiarme.”
+              </div>
             </div>
+
             <div class="testimonial">
-              “Me costaba mucho saber si estaba preparada o no.
-              Con las estadísticas de la plataforma veo de un vistazo qué asignaturas tengo listas y cuáles necesito repasar.”
-              <div class="testimonial-name">Lucía, 1.º Derecho</div>
-              <div class="testimonial-meta">Universidad privada · Subió su media en el segundo cuatrimestre</div>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img src="img/avatar-lucia.png" alt="Retrato de Lucía, estudiante de Derecho" />
+                </div>
+                <div class="testimonial-info">
+                  <div class="testimonial-name">Lucía, 1.º Derecho</div>
+                  <div class="testimonial-meta">Universidad privada · Subió su media en el segundo cuatrimestre</div>
+                </div>
+              </div>
+              <div class="testimonial-text">
+                “Me costaba mucho saber si estaba preparada o no.
+                Con las estadísticas de la plataforma veo de un vistazo qué asignaturas tengo listas y cuáles necesito repasar.”
+              </div>
             </div>
           </div>
 
@@ -1058,7 +1115,7 @@
                   Pruébalo gratis
                 </button>
                 <p style="font-size:13px; color:var(--color-muted); margin-top:8px;">
-                  Crea tu cuenta gratis en menos de 1 minuto y haz hoy los tests que harán que tu “yo del examen” llegue más tranquilo.
+                  Crea tu cuenta gratis en menos de 1 minuto.
                 </p>
               </div>
             </div>
@@ -1109,10 +1166,8 @@
   </div>
 
   <script>
-    // Año footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Tracking de clics en CTAs con Meta Pixel (Lead)
     function trackLeadClick() {
       if (typeof fbq === 'function') {
         fbq('track', 'Lead', {
@@ -1126,7 +1181,6 @@
       btn.addEventListener('click', trackLeadClick);
     });
 
-    // FAQ acordeones
     document.querySelectorAll('.faq-item').forEach(function (item) {
       var header = item.querySelector('.faq-header');
       header.addEventListener('click', function () {
